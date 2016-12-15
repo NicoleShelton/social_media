@@ -1,4 +1,5 @@
 from flask import Flask, request
+import os
 from twitter import posts, get_html
 
 app = Flask(__name__)
@@ -21,7 +22,7 @@ def get_tweets():
     #     '<tr><td>{}</td></tr>'.format(get_html(t.id)) for t in tweets)
     x = '<tr>' # initialize new string of table data
     for i in range(len(tweets)):  # iterate over length of the tweet list by index
-        x += '<td>{}</td>'.format(get_html(tweets[i].id)) # tweets[i] is single tweet data
+        x += '<td>{}</td>'.format(get_html(tweets[i].id, 1/100)) # tweets[i] is single tweet data
         if i % 3 == 2: 
             x += '</tr><tr>' # every three items closes row and opens new one
     x += '</tr>' # closes table data string
@@ -31,4 +32,5 @@ def get_tweets():
 
 
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)

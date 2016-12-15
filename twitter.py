@@ -1,5 +1,6 @@
 import tweepy
 import os
+from time import sleep
 
 ckey = os.environ['api_key']
 csecret = os.environ['api_secret']
@@ -20,7 +21,8 @@ def posts(hashtag, num_items):
 
     return list(cricTweet)
 
-def get_html(id):
+def get_html(id, delay=0):
+    sleep(delay)
     cricTweet = api.get_oembed(id=id)['html']
 
     return cricTweet

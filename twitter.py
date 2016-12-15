@@ -1,9 +1,10 @@
 import tweepy
+import os
 
-ckey = "7WIPrVysPZD4NM5UtMXWmDyTq"
-csecret = "HvZJjJcpsZ6uVl0TWySq1keR45XrYJgIeAtU17XrB79ZKiuB7k"
-atoken = "808326668213436416-DEQ09Y2Jx9zpTLDtkPPNXadLPIS1i28"
-asecret = "kjedNjuX84ShbJuJEZHketCTMylbp3RzGxFwJNmCGTJNe"
+ckey = os.environ['api_key']
+csecret = os.environ['api_secret']
+atoken = os.environ['access_token_key']
+asecret = os.environ['access_token_secret']
 
 OAUTH_KEYS = {'consumer_key': ckey,
             'consumer_secret': csecret,

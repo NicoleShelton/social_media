@@ -14,8 +14,7 @@ def root():
 def get_tweets():
     tag = request.values.get('tag', 'cat')
     tweets = posts(tag, 20)
-    s = """<link href="twittericon.png" rel="shortcut icon" />
-    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet"> 
+    s = """<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet"> 
     <link href='/static/twitter.css' rel='stylesheet'>
     <h1>Twitter Posts</h1>
     <table>"""

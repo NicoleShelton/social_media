@@ -4,6 +4,10 @@ h1 {
     font-family: 'Rock Salt', cursive;
 }
 
+body {
+    background-image: url("background.html")
+}
+
 #tag {
     text-align: center;
     font-size: 150%;
